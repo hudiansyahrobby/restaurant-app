@@ -15,11 +15,13 @@
     "@babel/core": "^7.10.5",
     "@babel/preset-env": "^7.10.4",
     "babel-loader": "^8.1.0",
-    "copy-webpack-plugin": "^6.0.3",
+    "copy-webpack-plugin": "^6.1.0",
     "css-loader": "^3.6.0",
-    "eslint": "^7.4.0",
+    "eslint": "^7.7.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
     "file-loader": "^6.0.0",
-    "html-webpack-plugin": "^4.3.0",
+    "html-webpack-plugin": "^4.4.1",
     "jasmine-ajax": "^4.0.0",
     "jasmine-core": "^3.5.0",
     "karma": "^5.1.0",
@@ -38,6 +40,9 @@
     "whatwg-fetch": "^3.2.0"
   },
   "dependencies": {
-    "regenerator-runtime": "^0.13.5"
+    "axios": "^0.20.0",
+    "idb": "^5.0.4",
+    "regenerator-runtime": "^0.13.5",
+    "serviceworker-webpack-plugin": "^1.0.1"
   }
 }
