@@ -34,16 +34,21 @@ const Detail = {
       hideSpinner();
 
       // Add Review Handler
-      const onSubmitReviewHandler = (event) => {
+      const onSubmitReviewHandler = async (event) => {
         event.preventDefault();
-        let inputName = document.getElementById('name').value;
-        let inputReview = document.getElementById('review').value;
+        const inputName = document.getElementById('name').value;
+        const inputReview = document.getElementById('review').value;
         if (inputName === '' || inputReview === '') {
           alert('Please Enter your name and your review');
         } else {
-          restaurantSource.postRestaurantReview(inputName, inputReview);
-          inputName = '';
-          inputReview = '';
+          showSpinner();
+
+          const reviewData = {
+            id: url.id,
+            name: inputName,
+            review: inputReview,
+          };
+          await restaurantSource.postRestaurantReview(reviewData);
         }
       };
       const submitButton = document.getElementById('submitReview');

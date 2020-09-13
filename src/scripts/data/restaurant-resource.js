@@ -2,6 +2,8 @@ import axios from 'axios';
 
 import API_ENDPOINT from '../globals/api-endpoint';
 import CONFIG from '../globals/config';
+import { hideSpinner } from '../utils/spinner-initiator';
+import { showModal } from '../utils/modal-initator';
 
 class restaurantSource {
   static async getRestaurantList() {
@@ -16,14 +18,9 @@ class restaurantSource {
     return restaurantDetail;
   }
 
-  static async postRestaurantReview(name, review) {
-    const data = {
-      id: 'adwafawfa',
-      name,
-      review,
-    };
+  static async postRestaurantReview(reviewData) {
+    const formattedData = JSON.stringify(reviewData);
 
-    const jsonData = JSON.stringify(data);
     const config = {
       headers: {
         'Content-Type': 'application/json',
@@ -32,13 +29,11 @@ class restaurantSource {
     };
 
     try {
-      const postReview = await axios.post(
-        'dicoding-restaurant-api.el.r.appspot.com/review',
-        jsonData,
-        config,
-      );
+      await axios.post(API_ENDPOINT.POST_REVIEW, formattedData, config);
+      window.location.reload(true);
     } catch (error) {
-      console.log(error);
+      hideSpinner();
+      showModal();
     }
   }
 }

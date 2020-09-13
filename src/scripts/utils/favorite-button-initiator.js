@@ -27,7 +27,6 @@ const FavoriteButtonInitiator = {
 
   _renderFavorite() {
     this._favoriteButtonContainer.innerHTML = createFavoriteButtonTemplate();
-    console.log(this._favoriteButtonContainer);
     const favoriteButton = document.querySelector('#favoriteButton');
     favoriteButton.addEventListener('click', async () => {
       await favoriteRestaurant.putRestaurant(this._restaurant);
