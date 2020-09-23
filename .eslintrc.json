@@ -19,6 +19,11 @@
     "implicit-arrow-linebreak": "off",
     "no-restricted-globals": "off",
     "operator-linebreak": "off",
-    "no-alert": "off"
+    "no-alert": "off",
+    "consistent-return": "off",
+    "no-prototype-builtins": "off",
+    "import/prefer-default-export": "off",
+    "no-undef": "off",
+    "no-return-assign": "off"
   }
 }

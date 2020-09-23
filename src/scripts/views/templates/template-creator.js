@@ -175,14 +175,14 @@ const createRestaurantDetailTemplate = (restaurant) => {
 `;
 };
 
-const createFavoriteButtonTemplate = () => `
+const createFavoriteRestaurantButtonTemplate = () => `
   <button aria-label="Add Restaurant to Favorite" id="favoriteButton" class="btn">
     <span>Add To Favorite</span>
     <i class="far fa-heart" aria-hidden="true"></i>
   </button>
 `;
 
-const createFavoritedButtonTemplate = () => `
+const createUnfavoriteRestaurantButtonTemplate = () => `
   <button aria-label="Remove Restaurant from Favorite" id="favoriteButton" class="btn">
     <span>Remove from Favorite</span>
     <i class="fa fa-heart" aria-hidden="true"></i>
@@ -193,6 +193,6 @@ export {
   createRestaurantListTemplate,
   createFeatureTemplate,
   createRestaurantDetailTemplate,
-  createFavoriteButtonTemplate,
-  createFavoritedButtonTemplate,
+  createFavoriteRestaurantButtonTemplate,
+  createUnfavoriteRestaurantButtonTemplate,
 };
