@@ -33,6 +33,11 @@ $secondary__color: #1a202c;
 }
 
 @media (min-width: 800px) {
+  .hero {
+    background-image: radial-gradient(#00000046, #000000),
+      url(../public/images/hero-image-medium.webp);
+  }
+
   .hero__title {
     font-size: 3rem;
   }
@@ -110,6 +115,11 @@ $secondary__color: #1a202c;
 }
 
 @media (min-width: 1200px) {
+  .hero {
+    background-image: radial-gradient(#00000046, #000000),
+      url(../public/images/hero-image-large.webp);
+  }
+
   main {
     max-width: 1200px;
     margin: auto;

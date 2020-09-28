@@ -6,13 +6,13 @@ class NavbarApp extends HTMLElement {
       <nav class="header__nav">
         <ul class="header__menus">
           <li class="header__menu">
-            <a class="header__link" href="/"><i class="fas fa-home"></i>Home</a>
+            <a class="header__link" href="/">Home</a>
           </li>
           <li class="header__menu">
-            <a class="header__link" href="#/favorite"><i class="fas fa-star"></i>Favorite</a>
+            <a class="header__link" href="#/favorite">Favorite</a>
           </li>
           <li class="header__menu">
-            <a class="header__link" href="https://github.com/hudiansyahrobby" target="__blank" rel="noopener noreferrer"><i class="fas fa-user"></i>About Us</a>
+            <a class="header__link" href="https://github.com/hudiansyahrobby" target="__blank" rel="noopener noreferrer">About Us</a>
           </li>
         </ul>
       </nav>

@@ -3,8 +3,7 @@ import { createRestaurantListTemplate } from '../../templates/template-creator';
 class FavoriteRestaurantSearchView {
   getTemplate() {
     return `
-       <div class="content">
-        <input id="query" type="text">
+       <div class="content" id="favoriteRestaurant">
         <h2 class="content__heading">Your Favorite Restaurant</h2>
             <div id="restaurant" class="restaurant">
                         
@@ -12,12 +11,6 @@ class FavoriteRestaurantSearchView {
        </div>
       
    `;
-  }
-
-  runWhenUserIsSearching(callback) {
-    document.getElementById('query').addEventListener('change', (event) => {
-      callback(event.target.value);
-    });
   }
 
   showRestaurants(restaurants) {

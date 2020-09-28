@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-vars */
-import NavbarApp from '../components/navbar-app';
-import DrawerApp from '../components/drawer-app';
-import FooterApp from '../components/footer-app';
-import ModalApp from '../components/modal-app';
+import '../components/navbar-app';
+import '../components/drawer-app';
+import '../components/footer-app';
+import '../components/modal-app';
 import 'regenerator-runtime'; /* for async await transpile */
 
 // import styles

@@ -4,7 +4,7 @@ import API_ENDPOINT from '../globals/api-endpoint';
 const CacheHelper = {
   async cachingAppShell(requests) {
     const cache = await this._openCache();
-    cache.addAll(requests);
+    await cache.addAll(requests);
   },
 
   async deleteOldCache() {
@@ -42,7 +42,7 @@ const CacheHelper = {
 
   async _addCache(request, response) {
     const cache = await this._openCache();
-    cache.put(request, response);
+    await cache.put(request, response);
   },
 };
 

@@ -47,11 +47,11 @@ const createFeatureTemplate = () => `
 const createRestaurantListTemplate = (restaurant) =>
   `
     <div class="restaurant__card restaurant-item">
-
     <img
-    data-sizes="(max-width: 600px) 480px, 800px"
-    data-src="${CONFIG.BASE_IMAGE_URL}/small/${restaurant.pictureId}"
-    data-srcset="${CONFIG.BASE_IMAGE_URL}/small/${restaurant.pictureId} 480w, ${
+      crossorigin="anonymous"
+      data-sizes="(max-width: 600px) 480px, 800px"
+      data-src="${CONFIG.BASE_IMAGE_URL}/small/${restaurant.pictureId}"
+      data-srcset="${CONFIG.BASE_IMAGE_URL}/small/${restaurant.pictureId} 480w, ${
     CONFIG.BASE_IMAGE_URL
   }/medium/${restaurant.pictureId}" alt="${restaurant.name}" class="lazyload restaurant__image" />
 

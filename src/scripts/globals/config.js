@@ -6,6 +6,5 @@ const CONFIG = {
   DATABASE_NAME: 'restaurant-catalogue-database',
   DATABASE_VERSION: 1,
   OBJECT_STORE_NAME: 'restaurant',
-  WEB_SOCKET_SERVER: 'wss://dicoding-restaurant-api.el.r.appspot.com/list',
 };
 export default CONFIG;
