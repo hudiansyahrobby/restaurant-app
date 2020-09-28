@@ -1,0 +1,149 @@
+$secondary__color: #1a202c;
+
+.hero {
+  height: calc(100vh - 67px);
+  margin-top: 67px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: radial-gradient(#00000046, #000000), url(../public/images/hero-image_2.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+
+  .hero__title {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  .hero__subtitle {
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+    width: 75%;
+    line-height: 25px;
+    text-align: center;
+  }
+}
+
+.restaurant {
+  margin-top: 60px;
+
+  .restaurant__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin: 15px;
+  }
+
+  .restaurant__title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 2.6rem;
+    margin: 20px 0 40px 0;
+  }
+
+  .restaurant__card {
+    background-color: rgb(255, 255, 255);
+    color: $secondary__color;
+
+    position: relative;
+    box-shadow: 5px 5px 10px #ccc, -5px -5px 10px #ccc;
+  }
+
+  .restaurant__image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    img {
+      width: 100%;
+    }
+  }
+
+  .restaurant__data {
+    margin-top: 20px;
+    padding: 0 20px 20px 20px;
+  }
+
+  .restaurant__name {
+    color: #9718d6;
+    font-size: 20px;
+    margin-bottom: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .restaurant__rating {
+    font-size: 18px;
+    margin: 8px 0;
+    & i {
+      margin-right: 3px;
+    }
+  }
+
+  .restaurant__description {
+    font-size: 16px;
+    line-height: 25px;
+    font-weight: 500;
+    color: $secondary__color;
+  }
+
+  .restaurant__city {
+    position: absolute;
+    font-size: 1rem;
+    padding: 10px 15px;
+    background-color: #9718d6d0;
+    top: 0;
+    letter-spacing: 1.2px;
+    color: #ffffff;
+    right: 0;
+    z-index: 20;
+  }
+}
+
+.feature {
+  .feature__grid {
+    display: grid;
+    gap: 20px;
+    margin: 15px;
+    text-align: center;
+    grid-template-columns: 1fr;
+  }
+
+  .feature__card {
+    padding: 20px;
+  }
+
+  .feature__name {
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+  }
+
+  .feature__icon {
+    font-size: 130px;
+    padding: 15px;
+    color: #65168d;
+  }
+
+  .feature__description {
+    line-height: 25px;
+  }
+
+  .feature__title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 2.6rem;
+    margin: 20px 0 40px 0;
+  }
+
+  .feature__card {
+    background-color: rgb(255, 255, 255);
+    color: $secondary__color;
+
+    position: relative;
+    box-shadow: 5px 5px 10px #ccc, -5px -5px 10px #ccc;
+  }
+}

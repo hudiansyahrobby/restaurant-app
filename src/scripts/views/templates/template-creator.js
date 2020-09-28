@@ -46,21 +46,28 @@ const createFeatureTemplate = () => `
 `;
 const createRestaurantListTemplate = (restaurant) =>
   `
-    <div class="restaurant__card">
-          <img
-            src="${CONFIG.BASE_IMAGE_URL}${restaurant.pictureId}"
-            alt="${restaurant.name}"
-            class='restaurant__image'
-          />
+    <div class="restaurant__card restaurant-item">
+
+    <img
+    data-sizes="(max-width: 600px) 480px, 800px"
+    data-src="${CONFIG.BASE_IMAGE_URL}/small/${restaurant.pictureId}"
+    data-srcset="${CONFIG.BASE_IMAGE_URL}/small/${restaurant.pictureId} 480w, ${
+    CONFIG.BASE_IMAGE_URL
+  }/medium/${restaurant.pictureId}" alt="${restaurant.name}" class="lazyload restaurant__image" />
+
           <div class="restaurant__data">
             <h2><a class="restaurant__name" href='#/detail/${restaurant.id}'>${
-    restaurant.name
+    restaurant.name || '-'
   }</a></h2>
             <h2 class="restaurant__city">${restaurant.city}</h2 >
             <h3 class="restaurant__rating" aria-label='${Math.round(
               restaurant.rating,
-            )} stars restaurant'>${createRatingTemplate(restaurant.rating)}</h3>
-            <p class="restaurant__description">${restaurant.description.substring(0, 250)} ...</p>
+            )} stars restaurant'>${
+    restaurant.rating && createRatingTemplate(restaurant.rating)
+  }</h3>
+            <p class="restaurant__description">${
+              restaurant.description && restaurant.description.substring(0, 250)
+            } ...</p>
           </div>
       </div>
       `;
@@ -113,7 +120,16 @@ const createRestaurantDetailTemplate = (restaurant) => {
   <div class="restaurantDetail">
     <div class="restaurantDetail__header">
       <div class="restaurantDetail__image">
-        <img src="${CONFIG.BASE_IMAGE_URL}${restaurant.pictureId}" alt="${restaurant.name}"/>
+      <img
+      src="${CONFIG.BASE_IMAGE_URL}/small/${restaurant.pictureId}"
+      srcset="${CONFIG.BASE_IMAGE_URL}/small/${restaurant.pictureId} 480w, ${
+    CONFIG.BASE_IMAGE_URL
+  }/medium/${restaurant.pictureId}"
+      sizes="(max-width: 600px) 480px, 800px"
+      alt="${restaurant.name}"
+      
+    />
+
         <div class="restaurantDetail__city">${restaurant.city}</div>
       </div>
       <div class="restaurantDetail__sideContent">
@@ -122,7 +138,9 @@ const createRestaurantDetailTemplate = (restaurant) => {
         <div class="restaurantDetail__address"><i class="fas fa-map-marker-alt"></i>${
           restaurant.address
         }</div>
-        <div class="restaurantDetail__rating">${createRatingTemplate(restaurant.rating)}</div>
+        <div class="restaurantDetail__rating">${
+          restaurant.rating && createRatingTemplate(restaurant.rating)
+        }</div>
         <div id="favoriteButtonContainer"></div>
       </div>
     </div>

@@ -1,0 +1,122 @@
+$secondary__color: #1a202c;
+
+@media (min-width: 600px) {
+  .feature {
+    .feature__grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .restaurant {
+    .restaurant__grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 15px 15px;
+    }
+  }
+
+  .restaurantDetail {
+    .restaurantDetail__header {
+      grid-template-columns: 1fr 1fr;
+
+      .restaurantDetail__image {
+        margin-right: 15px;
+      }
+    }
+
+    .restaurantDetail__mainContent {
+      padding: 20px;
+
+      .restaurantDetail__reviews {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  }
+}
+
+@media (min-width: 800px) {
+  .hero__title {
+    font-size: 3rem;
+  }
+  .restaurant {
+    .restaurant__grid {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+  .restaurantDetail {
+    .restaurantDetail__categories {
+      margin-top: 15px;
+    }
+    .restaurantDetail__mainContent {
+      .restaurantDetail__reviews {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+  }
+  .accordion {
+    max-width: 800px;
+    margin: auto;
+  }
+}
+
+@media (min-width: 992px) {
+  .header {
+    padding: 20px 0;
+
+    .header__button {
+      display: none;
+    }
+
+    .header__nav {
+      display: flex;
+    }
+
+    .header__menus {
+      display: flex;
+      list-style-type: none;
+    }
+
+    .header__menu {
+      margin-right: 20px;
+    }
+
+    .header__link {
+      color: $secondary__color;
+      font-size: 1rem;
+      padding: 16px 0;
+      text-decoration: none;
+      transition: color 0.3s ease-in-out;
+      &:hover {
+        color: #e0a3ff;
+      }
+    }
+
+    .header__link.transparent {
+      color: #fff;
+    }
+
+    .header__link i {
+      margin-right: 8px;
+    }
+  }
+
+  .drawer {
+    display: none;
+  }
+
+  .hero {
+    .hero__title {
+      font-size: 3rem;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  main {
+    max-width: 1200px;
+    margin: auto;
+  }
+  .restaurant {
+    .restaurant__grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}

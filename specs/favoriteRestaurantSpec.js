@@ -10,22 +10,33 @@ describe('Favorite a restaurant', () => {
     addFavoriteButtonContainer();
   });
 
-  it('should show the add to favorite button when the restaurant has not been favorited yet', async () => {
-    TestFactories.createFavoriteButtonPresenterWithRestaurant({ id: 1 });
+  afterEach(async () => {
+    (await FavoriteRestaurant.getAllRestaurants()).forEach(async (restaurant) => {
+      await FavoriteRestaurant.deleteRestaurant(restaurant.id);
+    });
+  });
 
-    expect(document.querySelector('[aria-label="Add Restaurant to Favorite"]')).toBeTruthy();
+  it('should show the add to favorite button when the restaurant has not been favorited yet', async () => {
+    await TestFactories.createFavoriteButtonPresenterWithRestaurant({ id: 1 });
+    const favoriteButton = document.querySelector('[aria-label="Add Restaurant to Favorite"]');
+    expect(favoriteButton).toBeTruthy();
   });
 
   it('should not show the remove from favorite button when the restaurant has not been favorited before', async () => {
-    TestFactories.createFavoriteButtonPresenterWithRestaurant({ id: 1 });
-
-    expect(document.querySelector('[aria-label="Remove Restaurant from Favorite"]')).toBeFalsy();
+    await TestFactories.createFavoriteButtonPresenterWithRestaurant({ id: 1 });
+    const unFavoriteButton = document.querySelector(
+      '[aria-label="Remove Restaurant from Favorite"]',
+    );
+    expect(unFavoriteButton).toBeFalsy();
   });
 
   it('should be able to favorite the restaurant', async () => {
-    TestFactories.createFavoriteButtonPresenterWithRestaurant({ id: 1 });
+    await TestFactories.createFavoriteButtonPresenterWithRestaurant({ id: 1 });
 
-    document.querySelector('#likeButton').dispatchEvent(new Event('click'));
+    const favoriteButton = document.querySelector('#favoriteButton');
+
+    favoriteButton.dispatchEvent(new Event('click'));
+
     const restaurant = await FavoriteRestaurant.getRestaurant(1);
 
     expect(restaurant).toEqual({ id: 1 });
@@ -34,12 +45,14 @@ describe('Favorite a restaurant', () => {
   });
 
   it('should not add a restaurant again when its already favorited', async () => {
-    TestFactories.createFavoriteButtonPresenterWithRestaurant({ id: 1 });
+    await TestFactories.createFavoriteButtonPresenterWithRestaurant({ id: 1 });
 
     // Add restaurant with ID 1 to favorited restaurant list
     await FavoriteRestaurant.putRestaurant({ id: 1 });
 
-    document.querySelector('#favoriteButton').dispatchEvent(new Event('click'));
+    const favoriteButton = document.querySelector('#favoriteButton');
+
+    favoriteButton.dispatchEvent(new Event('click'));
 
     // Expect only one restaurant that has ID 1
     expect(await FavoriteRestaurant.getAllRestaurants()).toEqual([{ id: 1 }]);
@@ -48,9 +61,10 @@ describe('Favorite a restaurant', () => {
   });
 
   it('should not add a restaurant to favorited list when it has no id', async () => {
-    TestFactories.createFavoriteButtonPresenterWithRestaurant({ id: 1 });
+    await TestFactories.createFavoriteButtonPresenterWithRestaurant({});
 
-    document.querySelector('#favoriteButton').dispatchEvent(new Event('click'));
+    const favoriteButton = document.querySelector('#favoriteButton');
+    favoriteButton.dispatchEvent(new Event('click'));
 
     expect(await FavoriteRestaurant.getAllRestaurants()).toEqual([]);
   });
