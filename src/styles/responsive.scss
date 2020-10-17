@@ -6,11 +6,9 @@ $secondary__color: #1a202c;
       grid-template-columns: 1fr 1fr;
     }
   }
-  .restaurant {
-    .restaurant__grid {
-      grid-template-columns: 1fr 1fr;
-      gap: 15px 15px;
-    }
+  .restaurant__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px 15px;
   }
 
   .restaurantDetail {
@@ -41,10 +39,8 @@ $secondary__color: #1a202c;
   .hero__title {
     font-size: 3rem;
   }
-  .restaurant {
-    .restaurant__grid {
-      grid-template-columns: 1fr 1fr 1fr;
-    }
+  .restaurant__grid {
+    grid-template-columns: 1fr 1fr 1fr;
   }
   .restaurantDetail {
     .restaurantDetail__categories {
@@ -86,7 +82,7 @@ $secondary__color: #1a202c;
     .header__link {
       color: $secondary__color;
       font-size: 1rem;
-      padding: 16px 0;
+      padding: 16px 4px;
       text-decoration: none;
       transition: color 0.3s ease-in-out;
       &:hover {
@@ -124,9 +120,8 @@ $secondary__color: #1a202c;
     max-width: 1200px;
     margin: auto;
   }
-  .restaurant {
-    .restaurant__grid {
-      grid-template-columns: repeat(4, 1fr);
-    }
+
+  .restaurant__grid {
+    grid-template-columns: repeat(4, 1fr);
   }
 }

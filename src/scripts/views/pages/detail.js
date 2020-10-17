@@ -58,6 +58,7 @@ const Detail = {
     } catch (error) {
       hideSpinner();
       showModal();
+      console.log(error);
     }
   },
 };

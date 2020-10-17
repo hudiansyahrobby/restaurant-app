@@ -5,7 +5,7 @@ class FavoriteRestaurantSearchView {
     return `
        <div class="content" id="favoriteRestaurant">
         <h2 class="content__heading">Your Favorite Restaurant</h2>
-            <div id="restaurant" class="restaurant">
+            <div id="restaurant" class="restaurant restaurant__grid">
                         
             </div>
        </div>
